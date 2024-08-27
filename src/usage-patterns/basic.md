@@ -3,7 +3,7 @@ icon: dot
 order: A
 ---
 
-# Basic Generation
+# Basic
 
 ```ruby
 require 'victor'

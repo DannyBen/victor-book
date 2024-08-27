@@ -1,6 +1,7 @@
 ---
 label: Overview
 icon: home
+order: 100
 ---
 
 # Welcome to Victor
@@ -53,3 +54,8 @@ tags.
     svg.css['.box'] = { fill: :red }
     ```
 
+## Installation
+
+```shell
+gem install victor
+```

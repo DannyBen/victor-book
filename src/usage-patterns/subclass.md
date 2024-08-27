@@ -3,7 +3,7 @@ icon: dot
 order: D
 ---
 
-# Subclassing
+# Subclass
 
 ```ruby
 require 'victor'

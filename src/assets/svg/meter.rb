@@ -2,7 +2,7 @@ led_width = 10
 led_gap = 2
 total_width = 10 * (led_width + led_gap) + 8
 
-setup viewBox: "0 0 #{total_width} 40"
+setup viewBox: "0 0 #{total_width} 30"
 
 build do
   # Frame

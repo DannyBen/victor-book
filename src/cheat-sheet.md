@@ -1,9 +1,12 @@
 ---
 label: Cheat Sheet
 icon: paste
+order: 95
 ---
 
 # Cheat Sheet
+
+This document provides a quick reference for common concepts in Victor.
 
 ## Initializing
 
