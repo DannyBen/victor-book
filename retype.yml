@@ -1,0 +1,50 @@
+input: src
+output: docs
+url: victor.dannyb.co
+
+serve:
+  host: 0.0.0.0
+  port: 3000
+  watch: { polling: 3000 }
+
+editor:
+  enabled: true
+
+branding:
+  logo: assets/logo.svg
+  logoDark: assets/logo-dark.svg
+  label: v0.5.0
+
+meta:
+  title: " | Victor - SVG Image Builder"
+
+edit:
+  repo: https://github.com/DannyBen/victor-book/
+  base: src
+  branch: master
+
+links:
+  - text: GitHub
+    link: https://github.com/DannyBen/victor
+    icon: mark-github
+    target: blank
+  - text: Issues
+    link: https://github.com/DannyBen/victor/issues
+    icon: issue-opened
+    target: blank
+  - text: Discussions
+    link: https://github.com/DannyBen/victor/discussions
+    icon: comment-discussion
+    target: blank
+
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
+  links:
+    - text: Site Source
+      link: https://github.com/DannyBen/victor-book
+      target: blank
+
+# Add {{ nowrap }} after `...` to prevent line break
+# ref: https://github.com/retypeapp/retype/issues/509
+# data:
+#   nowrap: '{style="white-space: nowrap;"}'
