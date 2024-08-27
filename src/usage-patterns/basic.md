@@ -1,6 +1,6 @@
 ---
-label: Basic Generation
-icon: home
+icon: dot
+order: A
 ---
 
 # Basic Generation
@@ -28,3 +28,4 @@ svg.save 'pacman'
 # Or render it to screen
 puts svg.render
 
+```

@@ -1,6 +1,6 @@
 ---
 label: Cheat Sheet
-icon: home
+icon: paste
 ---
 
 # Cheat Sheet
@@ -158,7 +158,12 @@ svg.rect fill: :blue
 
 # 3. array => space-delimited string
 svg.path d: ['M0', '0', 'h80', 'L40', '100']
+
+
+# 4. hash => style string
+svg.rect style: { fill: :blue, stroke: :red }
 ```
+
 
 ||| SVG Output
 ```svg
@@ -175,7 +180,66 @@ svg.path d: ['M0', '0', 'h80', 'L40', '100']
 <path d="M0 0 h80 L40 100"/>
 
 
+<!-- 4 -->
+<rect style="fill:blue; stroke:red"/>
+
+```
+|||
 
 
+## CSS
+
+||| Ruby Input
+```ruby
+# 1. Hash keys
+svg.css['.box'] = { fill: :red }
+
+
+
+
+
+
+# 2. Full hash assignment
+svg.css = {
+  '.box': {
+    fill: :red
+  }
+}
+
+
+# 3. String
+svg.css = <<~CSS
+  .box: {
+    fill: magenta
+  }
+}
+CSS
+```
+
+
+||| SVG Output
+```svg
+<!-- 1 -->
+<style>
+  .box {
+    fill: red;
+  }
+</style>
+
+
+<!-- 2 -->
+<style>
+  .box {
+    fill: red;
+  }
+</style>
+
+
+<!-- 3 -->
+<style>
+  .box {
+    fill: magenta;
+  }
+</style>
 ```
 |||
