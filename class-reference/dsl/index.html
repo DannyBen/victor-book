@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778148733524">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778161186515">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>DSL Class Reference | Victor - SVG Image Builder</title>
-    <meta name="title" content="DSL Class Reference | Victor - SVG Image Builder">
-    <meta name="description" content="Victor::SVG provides you with these methods:">
+    <title>DSL Module Reference | Victor - SVG Image Builder</title>
+    <meta name="title" content="DSL Module Reference | Victor - SVG Image Builder">
+    <meta name="description" content="The Victor::DSL module is a thin wrapper around Victor::SVG that provides access to the SVG object, and direct access to several of its methods.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://victor.dannyb.co/class-reference/dsl/">
@@ -19,23 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://victor.dannyb.co/class-reference/dsl/">
-    <meta property="og:title" content="DSL Class Reference | Victor - SVG Image Builder">
-    <meta property="og:description" content="Victor::SVG provides you with these methods:">
+    <meta property="og:title" content="DSL Module Reference | Victor - SVG Image Builder">
+    <meta property="og:description" content="The Victor::DSL module is a thin wrapper around Victor::SVG that provides access to the SVG object, and direct access to several of its methods.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://victor.dannyb.co/class-reference/dsl/">
-    <meta property="twitter:title" content="DSL Class Reference | Victor - SVG Image Builder">
-    <meta property="twitter:description" content="Victor::SVG provides you with these methods:">
+    <meta property="twitter:title" content="DSL Module Reference | Victor - SVG Image Builder">
+    <meta property="twitter:description" content="The Victor::DSL module is a thin wrapper around Victor::SVG that provides access to the SVG object, and direct access to several of its methods.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.778148733524" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.778161186515" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778148733524" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778161186515" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778148733524" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778148733524" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778161186515" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -221,46 +220,60 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="dsl-class-reference" class="break-words">
+<doc-anchor-target id="dsl-module-reference" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dsl-class-reference">#</doc-anchor-trigger>
-        <span>DSL Class Reference</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dsl-module-reference">#</doc-anchor-trigger>
+        <span>DSL Module Reference</span>
     </h1>
 </doc-anchor-target>
-<p><code v-pre>Victor::SVG</code> provides you with these methods:</p>
-<doc-anchor-target id="save">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#save">#</doc-anchor-trigger>
-        <span><code v-pre>save</code></span>
-    </h2>
-</doc-anchor-target>
-<p>Save the SVG.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.save 'outfile'
-svg.save 'outfile', template: :minimal
-svg.save 'outfile', template: 'path/to/template'
-svg.save 'outfile.svg', template: 'path/to/template', glue: ''</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="render--to_s">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#render--to_s">#</doc-anchor-trigger>
-        <span><code v-pre>render</code> / <code v-pre>to_s</code></span>
-    </h2>
-</doc-anchor-target>
-<p>Render the SVG to string. The method is delegated to the underlying
-<code v-pre>Victor::SVG</code> object. This method is called when you <code v-pre>puts</code> the object.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">puts component.render
-puts component  # same</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="content">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#content">#</doc-anchor-trigger>
-        <span><code v-pre>content</code></span>
-    </h2>
-</doc-anchor-target>
-<p>Render the array of SVG lines. The method is delegated to the underlying
-<code v-pre>Victor::SVG</code> object.</p>
+<p>The <code v-pre>Victor::DSL</code> module is a thin wrapper around <code v-pre>Victor::SVG</code> that provides
+access to the SVG object, and direct access to several of its methods.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code v-pre>svg</code></td>
+<td style="text-align: left;">Returns a <a href="../svg/"><code v-pre>Victor::SVG</code></a> instance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>setup</code></td>
+<td style="text-align: left;">Delegated to <a href="../svg/#setup"><code v-pre>Victor::SVG#setup</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>build</code></td>
+<td style="text-align: left;">Delegated to <a href="../svg/#build"><code v-pre>Victor::SVG#build</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>save</code></td>
+<td style="text-align: left;">Delegated to <a href="../svg/#save"><code v-pre>Victor::SVG#save</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>render</code></td>
+<td style="text-align: left;">Delegated to <a href="../svg/#render"><code v-pre>Victor::SVG#render</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>append</code></td>
+<td style="text-align: left;">Delegated to <a href="../svg/#append"><code v-pre>Victor::SVG#append</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>element</code></td>
+<td style="text-align: left;">Delegated to <a href="../svg/#element"><code v-pre>Victor::SVG#element</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>css</code></td>
+<td style="text-align: left;">Delegated to <a href="../svg/#css"><code v-pre>Victor::SVG#css</code></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For more information and example, see
+<a href="../../usage-patterns/dsl/">Ways to Use Victor <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></g></g></svg> DSL</a>.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -280,7 +293,7 @@ puts component  # same</code></pre>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Component</span>
+                                                <span class="block mt-1">Component Class Reference</span>
                                             </span>
                                         </a>
                                     </div>
@@ -329,6 +342,6 @@ puts component  # same</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "DSL Class Reference", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "DSL Module Reference", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

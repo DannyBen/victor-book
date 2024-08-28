@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778148733524">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778161186515">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Command Line | Victor - SVG Image Builder</title>
     <meta name="title" content="Command Line | Victor - SVG Image Builder">
+    <meta name="description" content="Use the separate Victor Command Line Interface to create new Ruby scripts, and render SVGs.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://victor.dannyb.co/usage-patterns/cli/">
@@ -19,20 +20,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://victor.dannyb.co/usage-patterns/cli/">
     <meta property="og:title" content="Command Line | Victor - SVG Image Builder">
+    <meta property="og:description" content="Use the separate Victor Command Line Interface to create new Ruby scripts, and render SVGs.">
+    <meta property="og:image" content="https://victor.dannyb.co/examples/ghost/ghost.svg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://victor.dannyb.co/usage-patterns/cli/">
     <meta property="twitter:title" content="Command Line | Victor - SVG Image Builder">
+    <meta property="twitter:description" content="Use the separate Victor Command Line Interface to create new Ruby scripts, and render SVGs.">
+    <meta property="twitter:image" content="https://victor.dannyb.co/examples/ghost/ghost.svg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.778148733524" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.778161186515" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778148733524" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778161186515" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778148733524" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778148733524" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778161186515" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778161186515" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -224,9 +229,66 @@
         <span>Command Line</span>
     </h1>
 </doc-anchor-target>
+<p>Use the separate
+<a href="https://github.com/DannyBen/victor-cli">Victor Command Line Interface</a>
+to create new Ruby scripts, and render SVGs.</p>
+<doc-anchor-target id="target-image">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#target-image">#</doc-anchor-trigger>
+        <span>Target Image</span>
+    </h2>
+</doc-anchor-target>
+<p>In the example below, we are creating this ghost image.</p>
+<p><figure class="content-center">
+    <img src="../../examples/ghost/ghost.svg" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="usage-pattern">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage-pattern">#</doc-anchor-trigger>
+        <span>Usage Pattern</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Run <code v-pre>victor init RUBY_FILENAME</code> to create a sample
+<a href="../dsl/">Victor DSL</a> file.</li>
+<li>Edit the file.</li>
+<li>Run <code v-pre>victor render RUBY_FILENAME SVG_FILENAME</code> to render your SVG.</li>
+</ol>
+<doc-anchor-target id="code">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#code">#</doc-anchor-trigger>
+        <span>Code</span>
+    </h2>
+</doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby"></code></pre>
+<pre class="language-ruby"><code v-pre class="language-ruby"># Render this by running:
+# victor render &quot;ghost.rb&quot;
+
+setup viewBox: '0 0 100 100'
+
+build do
+  circle cx: 50, cy: 50, r: 40, fill: 'yellow'
+  rect x: 10, y: 50, width: 80, height: 50, fill: 'yellow'
+
+  [25, 50].each do |x|
+    circle cx: x, cy: 40, r: 8, fill: 'white'
+  end
+
+  path d: 'M11 100 l13 -15 l13 15 l13 -15 l13 15 l13 -15 l13 15 Z', fill: 'white'
+end</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="see-also">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>
+        <span>See Also</span>
+    </h2>
+</doc-anchor-target>
+<ul class="list-icon">
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-1.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z"/></g></g></svg> <a href="../dsl/">Ways to Use Victor <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></g></g></svg> DSL</a></li>
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg> <a href="https://github.com/DannyBen/victor-cli">Victor CLI source code</a></li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
