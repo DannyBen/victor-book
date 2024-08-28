@@ -40,6 +40,6 @@ to create SVG tags.
 ## See Also
 
 {.list-icon}
-- :icon-code: [SVG Class Reference](/class-reference/svg.md)
+- :icon-code: [SVG Class Reference](/class-reference/svg)
 - :icon-mark-github: [`Victor::SVG` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/svg.rb)
 - :icon-mark-github: [`Victor::SVGBase` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/svg_base.rb)

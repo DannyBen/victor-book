@@ -49,6 +49,6 @@ In the example below, we are creating this output, using `Cell`, `Piece` and
 ## See Also
 
 {.list-icon}
-- :icon-code: [Component Class Reference](/class-reference/component.md)
+- :icon-code: [Component Class Reference](/class-reference/component)
 - :icon-mark-github: [`Victor::Component` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/component.rb)
 

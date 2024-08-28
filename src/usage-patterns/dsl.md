@@ -28,6 +28,6 @@ In the example below, we are creating this icon.
 ## See Also
 
 {.list-icon}
-- :icon-code: [DSL Class Reference](/class-reference/dsl.md)
+- :icon-code: [DSL Module Reference](/class-reference/dsl)
 - :icon-mark-github: [`victor/script` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/script.rb)
 - :icon-mark-github: [`Victor::DSL` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/dsl.rb)

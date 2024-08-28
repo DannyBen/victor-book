@@ -3,7 +3,7 @@ icon: code
 order: C
 ---
 
-# Component
+# Component Class Reference
 
 `Victor::Component` provides you with these methods:
 

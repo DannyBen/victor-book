@@ -3,32 +3,23 @@ icon: code
 order: C
 ---
 
-# DSL Class Reference
+# DSL Module Reference
 
-`Victor::SVG` provides you with these methods:
+The `Victor::DSL` module is a thin wrapper around `Victor::SVG` that provides
+access to the SVG object, and direct access to several of its methods.
 
-## `save`
 
-Save the SVG.
+| Method    | Description                                       |
+|:----------|:--------------------------------------------------|
+| `svg`     | Returns a [`Victor::SVG`](svg) instance           |
+| `setup`   | Delegated to [`Victor::SVG#setup`](svg#setup)     |
+| `build`   | Delegated to [`Victor::SVG#build`](svg#build)     |
+| `save`    | Delegated to [`Victor::SVG#save`](svg#save)       |
+| `render`  | Delegated to [`Victor::SVG#render`](svg#render)   |
+| `append`  | Delegated to [`Victor::SVG#append`](svg#append)   |
+| `element` | Delegated to [`Victor::SVG#element`](svg#element) |
+| `css`     | Delegated to [`Victor::SVG#css`](svg#css)         |
 
-```ruby
-svg.save 'outfile'
-svg.save 'outfile', template: :minimal
-svg.save 'outfile', template: 'path/to/template'
-svg.save 'outfile.svg', template: 'path/to/template', glue: ''
-```
 
-## `render` / `to_s`
-
-Render the SVG to string. The method is delegated to the underlying
-`Victor::SVG` object. This method is called when you `puts` the object.
-
-```ruby
-puts component.render
-puts component  # same
-```
-
-## `content`
-
-Render the array of SVG lines. The method is delegated to the underlying
-`Victor::SVG` object.
+For more information and example, see
+[Ways to Use Victor :icon-chevron-right: DSL](/usage-patterns/dsl).
