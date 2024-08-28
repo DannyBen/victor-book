@@ -6,14 +6,12 @@ order: 80
 
 # Ways to Use Victor
 
-While Victor itself is minimal in its design approach, it is quite flexible
-in offering several approaches to building SVGs, catering to different coding
-styles and project needs.
+While Victor itself is minimal by design, it offers a variety of methods for
+building SVGs, accommodating different coding styles and project requirements.
 
-You can start with the basics, using simple method calls to define your SVG
-structure, and after you are familiar with the basic concepts, consider
-switching to a more structured approach.
-
+You can begin with the basics, using straightforward method calls to define your
+SVG structure. Once you're comfortable with the fundamentals, you might want to
+explore more structured techniques.
 
 | Approach                   | When to Choose                                                                                                                     |
 |:---------------------------|:-----------------------------------------------------------------------------------------------------------------------------------|

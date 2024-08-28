@@ -5,40 +5,41 @@ order: D
 
 # Subclass
 
-```ruby
-require 'victor'
+Create your own class, that uses an instance of `Victor::SVG`.
 
-class Troll < Victor::SVG
-  attr_reader :color, :hat_color
+## Target Image
 
-  def initialize(color: 'yellow', hat_color: 'red')
-    # Accept parameters we care about, and call the super initializer
-    @color = color
-    @hat_color = hat_color
-    super width: 100, height: 100, viewBox: '0 0 100 100'
+In the example below, we are creating this grid with random colors.
 
-    # Generate the base image with the frame and head elements
-    frame
-    head
-  end
+!!!info Note
+This class generates output identical to the
+[Class Example](/usage-patterns/class).
+!!!
 
-  # Allow adding more elements after instantiation
-  def add_nose
-    circle cx: 50, cy: 65, r: 4, fill: 'black'
-  end
+![](/examples/grid-subclass/grid.svg)
 
-  def frame
-    rect x: 0, y: 0, width: 100, height: 100, fill: '#336'
-    rect x: 10, y: 10, width: 80, height: 80, fill: '#fff'
-  end
+## Usage Pattern
 
-  def head
-    circle cx: 50, cy: 60, r: 24, fill: color
-    polygon points: %w[24,50 50,14 76,54], fill: hat_color
-  end
-end
+1. Create your own class and inherit from `Victor::SVG`.
+2. In the `#initialize` method, call `super` with any setup attributes.
+3. Optionally, in the `#initialize` method, call an internal method to generate
+   your SVG.
 
-troll = Troll.new color: '#33f', hat_color: '#3f3'
-troll.add_nose
-troll.save '15_subclassing'
-```
+!!!success Tip
+When you inherit from `Victor::SVG`, you can use SVG tags directly through
+`method_missing` (as shown in this example).
+
+If you inherit from `Victor::SVGBase`, you'll need to use the `#element` method
+to create SVG tags.
+!!!
+
+## Code
+
+:::code source="/examples/grid-subclass/grid.rb" :::
+
+## See Also
+
+{.list-icon}
+- :icon-code: [SVG Class Reference](/class-reference/svg.md)
+- :icon-mark-github: [`Victor::SVG` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/svg.rb)
+- :icon-mark-github: [`Victor::SVGBase` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/svg_base.rb)

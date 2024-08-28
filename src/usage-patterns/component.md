@@ -13,7 +13,7 @@ by having one component call and reference other components.
 In the example below, we are creating this output, using `Cell`, `Piece` and 
 `Board` components.
 
-![](/assets/component/filled-board.svg)
+![](/examples/checkers/filled-board.svg)
 
 ## Usage Pattern
 
@@ -33,67 +33,22 @@ In the example below, we are creating this output, using `Cell`, `Piece` and
 2. Once a component was rendered (`#render`, `#to_s`) or saved (`#save`), the
    `#body` method will be called once and once only. This means that at this
    point the SVG can no longer be altered.
-
-## Available Methods
-
-`Victor::Component` provides you with these methods:
-
-### `add`
-
-This is an alias to the underlying `Victor::SVG` object (which is also
-represented as `#vector`). It is intended to be used in your `#body`
-implementation, like this:
-
-```ruby
-def body
-  add.rect x: 0, y: 0, width: width, height: height
-end
-```
-
-### `append` / `embed`
-
-Use this method in your your `#body` implementation, to embed another
-component. This method is doing two things:
-
-1. Appending the SVG of the guest component.
-2. Merging the CSS (`#style`) of the guest component into its own.
-
-```ruby
-def body
-  append Cell.new
-  # or: embed Cell.new
-end
-```
-
-### `save`
-
-Save the SVG. The method is delegated to the underlying `Victor::SVG` object.
-
-```ruby
-component.save 'outfile'
-```
-
-### `render` / `to_s`
-
-Render the SVG to string. The method is delegated to the underlying
-`Victor::SVG` object. This method is called when you `puts` the object.
-
-```ruby
-puts component.render
-puts component  # same
-```
-
-### `content`
-
-Render the array of SVG lines. The method is delegated to the underlying
-`Victor::SVG` object.
+3. Each component is also a standalone SVG, that can be saved or rendered 
+   independently.
 
 ## Code
 
 +++ Cell
-:::code source="/assets/component/cell.rb" :::
+:::code source="/examples/checkers/cell.rb" :::
 +++ Piece
-:::code source="/assets/component/piece.rb" :::
+:::code source="/examples/checkers/piece.rb" :::
 +++ Board
-:::code source="/assets/component/board.rb" :::
+:::code source="/examples/checkers/board.rb" :::
 +++
+
+## See Also
+
+{.list-icon}
+- :icon-code: [Component Class Reference](/class-reference/component.md)
+- :icon-mark-github: [`Victor::Component` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/component.rb)
+

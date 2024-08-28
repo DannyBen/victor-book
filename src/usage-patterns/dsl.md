@@ -5,20 +5,29 @@ order: B
 
 # DSL
 
-```ruby
-require 'victor/script'
+By requiring `victor/script`, 
+by having one component call and reference other components.
 
-setup viewBox: '-10 -10 120 120', width: 200, height: 200
+## Target Image
 
-build do
-  mask id: 'heart' do
-    rect x: 0, y: 0, width: 100, height: 100, fill: 'white'
-    path d: 'M10,35 A20,20,0,0,1,50,35 A20,20,0,0,1,90,35 Q90,65,50,95 Q10,65,10,35 Z', fill: 'black'
-  end
+In the example below, we are creating this icon.
 
-  polygon points: '-10,110 110,110 110,-10', fill: 'orange'
-  circle cx: 50, cy: 50, r: 50, mask: 'url(#heart)'
-end
+![](/examples/heart/heart.svg)
 
-save '19_dsl'
-```
+## Usage Pattern
+
+1. Instantiate a `Victor::SVG` class.
+2. Create SVG elements by utilizing its `method_missing` behavior, which allows
+   you to call `svg.rect`, `svg.circle`, etc., to generate any SVG tag.
+
+## Code
+
+:::code source="/examples/heart/heart.rb" :::
+
+
+## See Also
+
+{.list-icon}
+- :icon-code: [DSL Class Reference](/class-reference/dsl.md)
+- :icon-mark-github: [`victor/script` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/script.rb)
+- :icon-mark-github: [`Victor::DSL` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/dsl.rb)
