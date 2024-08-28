@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778057271004">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778148733524">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Component | Victor - SVG Image Builder</title>
     <meta name="title" content="Component | Victor - SVG Image Builder">
+    <meta name="description" content="By using the Victor::Component base class, you can compose complex SVG images by having one component call and reference other components.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://victor.dannyb.co/usage-patterns/component/">
@@ -19,20 +20,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://victor.dannyb.co/usage-patterns/component/">
     <meta property="og:title" content="Component | Victor - SVG Image Builder">
+    <meta property="og:description" content="By using the Victor::Component base class, you can compose complex SVG images by having one component call and reference other components.">
+    <meta property="og:image" content="https://victor.dannyb.co/examples/checkers/filled-board.svg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://victor.dannyb.co/usage-patterns/component/">
     <meta property="twitter:title" content="Component | Victor - SVG Image Builder">
+    <meta property="twitter:description" content="By using the Victor::Component base class, you can compose complex SVG images by having one component call and reference other components.">
+    <meta property="twitter:image" content="https://victor.dannyb.co/examples/checkers/filled-board.svg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.778057271004" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.778148733524" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778057271004" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778148733524" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778057271004" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778057271004" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778148733524" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778148733524" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -224,9 +229,250 @@
         <span>Component</span>
     </h1>
 </doc-anchor-target>
+<p>By using the <code v-pre>Victor::Component</code> base class, you can compose complex SVG images
+by having one component call and reference other components.</p>
+<doc-anchor-target id="target-image">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#target-image">#</doc-anchor-trigger>
+        <span>Target Image</span>
+    </h2>
+</doc-anchor-target>
+<p>In the example below, we are creating this output, using <code v-pre>Cell</code>, <code v-pre>Piece</code> and
+<code v-pre>Board</code> components.</p>
+<p><figure class="content-center">
+    <img src="../../examples/checkers/filled-board.svg" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="usage-pattern">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage-pattern">#</doc-anchor-trigger>
+        <span>Usage Pattern</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Create a class that inherits from <code v-pre>Victor::Component</code></li>
+<li>Implement <code v-pre>width</code> and <code v-pre>height</code>, wither as public methods or instance variables.</li>
+<li>Implement <code v-pre>body</code>, and use it to add SVG elements and/or embed other components.</li>
+<li>Optionally, implement <code v-pre>style</code>, and use it to return a CSS hash, which will be
+merged to any hosting component.</li>
+<li>Optionally, if you want to provide host components with the ability to
+control <code v-pre>x</code> and <code v-pre>y</code>, provide them as public methods or instance variables.</li>
+</ol>
+<doc-anchor-target id="notes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#notes">#</doc-anchor-trigger>
+        <span>Notes</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Components are always generated with 100% width and height, and with a
+<code v-pre>viewBox</code> that is determined by your x, y, width, height properties (x and y
+default to 0).</li>
+<li>Once a component was rendered (<code v-pre>#render</code>, <code v-pre>#to_s</code>) or saved (<code v-pre>#save</code>), the
+<code v-pre>#body</code> method will be called once and once only. This means that at this
+point the SVG can no longer be altered.</li>
+<li>Each component is also a standalone SVG, that can be saved or rendered
+independently.</li>
+</ol>
+<doc-anchor-target id="code">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#code">#</doc-anchor-trigger>
+        <span>Code</span>
+    </h2>
+</doc-anchor-target>
+<doc-tabs>
+<doc-tab v-cloak id="cell">
+<template #title>Cell</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby"></code></pre>
+<pre class="language-ruby"><code v-pre class="language-ruby">require 'victor'
+
+class Cell &lt; Victor::Component
+  attr_reader :dark
+
+  def initialize(x: 0, y: 0, dark: false)
+    @dark = dark
+
+    # These 4 do not need attr_reader, Victor::Component handles that.
+    # While x and y are optional, width and height are required.
+    @x = x
+    @y = y
+    @width = 100
+    @height = 100
+  end
+
+  # This method defines the SVG body.
+  # Use add.* to add any SVG element.
+  def body
+    add.rect class: css_class, x: x, y: y, width: width, height: height
+  end
+
+  # This optional method returns a CSS hash. It will be merged into any host
+  # component automatically.
+  def style
+    {
+      '.cell':       { stroke: :white, stroke_width: 1 },
+      '.light.cell': { fill: '#d4a76f' },
+      '.dark.cell':  { fill: '#6a3f2b' }
+    }
+  end
+
+private
+
+  def css_class
+    @css_class ||= (dark ? 'dark cell' : 'light cell')
+  end
+end</code></pre>
 </doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="piece">
+<template #title>Piece</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">require 'victor'
+
+class Piece &lt; Victor::Component
+  attr_reader :dark
+
+  def initialize(x: 0, y: 0, dark: false)
+    @dark = dark
+    @x = x
+    @y = y
+  end
+
+  # Width and height can bn provided as methods, or as instance variables in
+  # the #initialize method.
+  def width = @width ||= 80
+  def height = @height ||= 80
+
+  # This method defines the SVG body.
+  # Use add.* to add any SVG element.
+  def body
+    add.circle class: css_class,
+      cx: x + width / 2, cy: y + height / 2,
+      r: [width, height].min / 2
+  end
+
+  # This optional method returns a CSS hash. It will be merged into any host
+  # component automatically.
+  def style
+    {
+      '.piece': {
+        filter: 'drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.5))',
+        stoke: :none
+      },
+      '.light.piece': {
+        fill: '#f5f5f5',
+      },
+      '.dark.piece':  {
+        fill: '#333',
+      }
+    }
+  end
+
+private
+
+  def css_class
+    @css_class ||= (dark ? 'dark piece' : 'light piece')
+  end
+end</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="board">
+<template #title>Board</template>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">require 'victor'
+
+class Board &lt; Victor::Component
+
+  # Since all components provide Width and height, we can use these properties
+  # to calculate this component's dimensions dynamically.
+  def width = @width ||= (cell_width * 8) + (board_margin * 2)
+  def height = @height ||= (cell_height * 8) + (board_margin * 2)
+
+  # Separate the SVG generation to logical units.
+  def body
+    add_frame
+    add_cells
+    add_pieces
+  end
+
+  # Provide a public interface for consumers to add pieces after creating
+  # the board instance. Note that once the component was rendered, its SVG
+  # is frozen - meaning this method must be called before rendering.
+  # For this reason, we only remember the added pieces in an array for later
+  # use.
+  def add_piece(row, col, dark: false)
+    piece = Piece.new dark: dark,
+      x: col * cell_width + board_margin + 10,
+      y: row * cell_height + board_margin + 10
+
+    pieces.push piece
+  end
+
+  def style
+    {
+      '.board-frame': {
+        fill: '#d1bfa7',
+        stroke: '#6a3f2b'
+      },
+      '.inner-frame': {
+        fill: '#6a3f2b',
+        stroke: '#6a3f2b',
+        stroke_width: (board_margin * 0.7).round
+      },
+    }
+  end
+
+private
+
+  def board_margin = @board_margin ||= 50
+  def cell_width = @cell_width ||= sample_cell.width
+  def cell_height = @cell_height ||= sample_cell.height
+  def sample_cell = @sample_cell ||= Cell.new
+
+  def pieces = @pieces ||= []
+
+  # Add a double-rectangle board frame
+  def add_frame
+    add.rect class: 'board-frame', x: 0, y: 0, width: width, height: height
+    add.rect class: 'inner-frame', x: board_margin, y: board_margin,
+      width: width - (board_margin * 2),
+      height: height - (board_margin * 2)
+  end
+
+  # Create the 8x8 grid.
+  def add_cells
+    8.times do |row|
+      dark = row.even?
+      8.times do |col|
+        cell = Cell.new dark: dark,
+          x: col * cell_width + board_margin,
+          y: row * cell_height + board_margin
+
+        embed cell
+        dark = !dark
+      end
+    end
+  end
+
+  # Add all pieces as requested by #add_piece
+  def add_pieces
+    pieces.each { |piece| embed piece }
+  end
+end</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="see-also">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>
+        <span>See Also</span>
+    </h2>
+</doc-anchor-target>
+<ul class="list-icon">
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06Zm-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0Z"/></g></g></svg> <a href="../../class-reference/component/">Component Class Reference</a></li>
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg> <a href="https://github.com/DannyBen/victor/blob/master/lib/victor/component.rb"><code v-pre>Victor::Component</code> source code</a></li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778057271004">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778148733524">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -11,6 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>DSL | Victor - SVG Image Builder</title>
     <meta name="title" content="DSL | Victor - SVG Image Builder">
+    <meta name="description" content="By requiring victor/script, by having one component call and reference other components.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://victor.dannyb.co/usage-patterns/dsl/">
@@ -19,20 +20,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://victor.dannyb.co/usage-patterns/dsl/">
     <meta property="og:title" content="DSL | Victor - SVG Image Builder">
+    <meta property="og:description" content="By requiring victor/script, by having one component call and reference other components.">
+    <meta property="og:image" content="https://victor.dannyb.co/examples/heart/heart.svg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://victor.dannyb.co/usage-patterns/dsl/">
     <meta property="twitter:title" content="DSL | Victor - SVG Image Builder">
+    <meta property="twitter:description" content="By requiring victor/script, by having one component call and reference other components.">
+    <meta property="twitter:image" content="https://victor.dannyb.co/examples/heart/heart.svg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.778057271004" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.778148733524" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778057271004" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778148733524" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778057271004" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778057271004" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778148733524" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778148733524" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -224,23 +229,66 @@
         <span>DSL</span>
     </h1>
 </doc-anchor-target>
+<p>By requiring <code v-pre>victor/script</code>,
+by having one component call and reference other components.</p>
+<doc-anchor-target id="target-image">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#target-image">#</doc-anchor-trigger>
+        <span>Target Image</span>
+    </h2>
+</doc-anchor-target>
+<p>In the example below, we are creating this icon.</p>
+<p><figure class="content-center">
+    <img src="../../examples/heart/heart.svg" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="usage-pattern">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage-pattern">#</doc-anchor-trigger>
+        <span>Usage Pattern</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Instantiate a <code v-pre>Victor::SVG</code> class.</li>
+<li>Create SVG elements by utilizing its <code v-pre>method_missing</code> behavior, which allows
+you to call <code v-pre>svg.rect</code>, <code v-pre>svg.circle</code>, etc., to generate any SVG tag.</li>
+</ol>
+<doc-anchor-target id="code">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#code">#</doc-anchor-trigger>
+        <span>Code</span>
+    </h2>
+</doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-ruby"><code v-pre class="language-ruby">require 'victor/script'
 
-setup viewBox: '-10 -10 120 120', width: 200, height: 200
+setup viewBox: '-10 -10 120 120'
 
 build do
   mask id: 'heart' do
     rect x: 0, y: 0, width: 100, height: 100, fill: 'white'
-    path d: 'M10,35 A20,20,0,0,1,50,35 A20,20,0,0,1,90,35 Q90,65,50,95 Q10,65,10,35 Z', fill: 'black'
+    path d: 'M10,35 A20,20,0,0,1,50,35 A20,20,0,0,1,90,35 Q90,65,50,95 Q10,65,10,35 Z',
+      fill: 'black'
   end
 
-  polygon points: '-10,110 110,110 110,-10', fill: 'orange'
-  circle cx: 50, cy: 50, r: 50, mask: 'url(#heart)'
+  polygon points: '-10,120 120,120 120,-10', fill: :orange
+  circle cx: 50, cy: 50, r: 50, mask: 'url(#heart)', fill: :red
 end
 
-save '19_dsl'</code></pre>
+save 'heart'</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="see-also">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>
+        <span>See Also</span>
+    </h2>
+</doc-anchor-target>
+<ul class="list-icon">
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06Zm-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0Z"/></g></g></svg> <a href="../../class-reference/dsl/">DSL Class Reference</a></li>
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg> <a href="https://github.com/DannyBen/victor/blob/master/lib/victor/script.rb"><code v-pre>victor/script</code> source code</a></li>
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg> <a href="https://github.com/DannyBen/victor/blob/master/lib/victor/dsl.rb"><code v-pre>Victor::DSL</code> source code</a></li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->

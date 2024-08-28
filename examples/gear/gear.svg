@@ -1,0 +1,12 @@
+<svg viewBox="0 0 100 100" style="background:lightgreen" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+<mask id="hole">
+<rect x="0" y="0" width="100" height="100" fill="white"/>
+<circle cx="50" cy="50" r="15" fill="black"/>
+</mask>
+<circle cx="50" cy="50" r="30" style="fill:#333; stroke:none" mask="url(#hole)"/>
+<rect x="45" y="10" width="10" height="80" style="fill:#333; stroke:none" mask="url(#hole)" transform="rotate(0 50 50)"/>
+<rect x="45" y="10" width="10" height="80" style="fill:#333; stroke:none" mask="url(#hole)" transform="rotate(45 50 50)"/>
+<rect x="45" y="10" width="10" height="80" style="fill:#333; stroke:none" mask="url(#hole)" transform="rotate(90 50 50)"/>
+<rect x="45" y="10" width="10" height="80" style="fill:#333; stroke:none" mask="url(#hole)" transform="rotate(135 50 50)"/>
+</svg>

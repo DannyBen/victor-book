@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778057271004">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778148733524">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -21,23 +21,23 @@
     <meta property="og:url" content="https://victor.dannyb.co/">
     <meta property="og:title" content="Welcome to Victor | Victor - SVG Image Builder">
     <meta property="og:description" content="Victor is a lightweight, zero-dependencies Ruby library that lets you build SVG images using Ruby code.">
-    <meta property="og:image" content="https://victor.dannyb.co/assets/svg/meter.svg">
+    <meta property="og:image" content="https://victor.dannyb.co/examples/meter/meter.svg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://victor.dannyb.co/">
     <meta property="twitter:title" content="Welcome to Victor | Victor - SVG Image Builder">
     <meta property="twitter:description" content="Victor is a lightweight, zero-dependencies Ruby library that lets you build SVG images using Ruby code.">
-    <meta property="twitter:image" content="https://victor.dannyb.co/assets/svg/meter.svg">
+    <meta property="twitter:image" content="https://victor.dannyb.co/examples/meter/meter.svg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.5.0.778057271004" rel="stylesheet">
+    <link href="resources/css/retype.css?v=3.5.0.778148733524" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.778057271004" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.778148733524" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.778057271004" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="resources/js/prism.js?v=3.5.0.778057271004" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.778148733524" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="resources/js/prism.js?v=3.5.0.778148733524" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -242,7 +242,7 @@ SVG images using Ruby code.</p>
 <doc-tab v-cloak id="svg-image">
 <template #title>SVG Image</template>
 <p><figure class="content-center">
-    <img src="assets/svg/meter.svg" alt="">
+    <img src="examples/meter/meter.svg" alt="">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
@@ -250,27 +250,30 @@ SVG images using Ruby code.</p>
 <doc-tab v-cloak id="ruby-input">
 <template #title>Ruby Input</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">led_width = 10
+<pre class="language-ruby"><code v-pre class="language-ruby">require 'victor'
+include Victor
+
+led_width = 10
 led_gap = 2
 total_width = 10 * (led_width + led_gap) + 8
 
-setup viewBox: &quot;0 0 #{total_width} 30&quot;
+svg = SVG.new viewBox: &quot;0 0 #{total_width} 30&quot;
 
-build do
-  # Frame
-  rect x: 2, y: 2, width: total_width - 4, height: 26,
-    rx: 4, fill: 'none', stroke: '#666'
+# Add frame
+svg.rect x: 2, y: 2, width: total_width - 4, height: 26,
+  rx: 4, fill: 'none', stroke: '#666'
 
-  # Leds
-  x = 5
-  10.times do |i|
-    opacity = i &lt; 7 ? 1 : 0.3
-    rect x: x, y: 5, width: led_width, height: 20,
-      rx: 3, fill: 'green', fill_opacity: opacity
+# Add leds
+x = 5
+10.times do |i|
+  opacity = i &lt; 7 ? 1 : 0.3
+  svg.rect x: x, y: 5, width: led_width, height: 20,
+    rx: 3, fill: 'green', fill_opacity: opacity
 
-    x += led_width + led_gap
-  end
-end</code></pre>
+  x += led_width + led_gap
+end
+
+svg.save 'meter'</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="svg-code">
