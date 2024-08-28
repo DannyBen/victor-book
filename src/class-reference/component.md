@@ -188,4 +188,4 @@ that call `svg` under the hood.
 | `content` | Delegated to [`Victor::SVG#content`](svg#content) |
 | `element` | Delegated to [`Victor::SVG#element`](svg#element) |
 | `css`     | Delegated to [`Victor::SVG#css`](svg#css)         |
-| `to_s`    | Delegated to [`Victor::SVG#to_s`](svg#to_S)       |
+| `to_s`    | Delegated to [`Victor::SVG#to_s`](svg#to_s)       |

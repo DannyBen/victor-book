@@ -11,8 +11,8 @@ editor:
   enabled: true
 
 branding:
-  logo: assets/logo.svg
-  logoDark: assets/logo-dark.svg
+  logo: examples/logo/logo.svg
+  logoDark: examples/logo/logo-dark.svg
   label: v0.5.0
 
 meta:
