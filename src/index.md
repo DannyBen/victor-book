@@ -31,31 +31,45 @@ tags.
 
 ### Key Features
 
-1. **Initialization**: Create an SVG with attributes like `viewBox` or `style`:
-    ```ruby
-    svg = Victor::SVG.new viewBox: '0 0 100 100'
-    ```
-2. **Elements**: Add SVG elements with attributes by calling method with the tag name:
-    ```ruby
-    svg.rect x: 0, y: 10, width: 100
-    ```
-3. **Nesting**: Nest elements using blocks:
-    ```ruby
-    svg.g transform: 'translate(10 10)' do
-      svg.rect x: 10, y: 10
-    end
-    ```
-4. **Attributes and Styling**: Attributes are converted as you would expect:
-    ```ruby
-    svg.rect style: { fill: :blue, font_family: 'Roboto' }
-    ```
-5. **CSS**: Define styles using a hash:
-    ```ruby
-    svg.css['.box'] = { fill: :red }
-    ```
+1. **Initialization**  
+   Create an SVG with attributes like `viewBox` or `style`:
+   ```ruby
+   svg = Victor::SVG.new viewBox: '0 0 100 100'
+   ```
+2. **Elements**  
+   Add SVG elements with attributes by calling methods with the desired tag name:
+   ```ruby
+   svg.rect x: 0, y: 10, width: 100
+   ```
+3. **Nesting**  
+   Nest elements using blocks:
+   ```ruby
+   svg.g transform: 'translate(10 10)' do
+     svg.rect x: 10, y: 10
+   end
+   ```
+4. **Attributes and Inline Styling**  
+   Attributes are converted as you would expect:
+   ```ruby
+   svg.rect style: { fill: :blue, font_family: 'Roboto' }
+   ```
+5. **CSS**  
+   Define stylesheets using a hash:
+   ```ruby
+   svg.css['.box'] = { fill: :red }
+   ```
 
 ## Installation
 
+Install Victor:
+
 ```shell
 gem install victor
+```
+
+Optionally, if you want to work with the
+[Victor Command Line Interface](/usage-patterns/cli/):
+
+```shell
+gem install victor-cli
 ```
