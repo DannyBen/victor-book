@@ -1,5 +1,5 @@
 ---
-expanded: true
+expanded: false
 icon: milestone
 order: 80
 ---

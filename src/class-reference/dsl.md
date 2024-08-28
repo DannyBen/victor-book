@@ -8,7 +8,6 @@ order: C
 The `Victor::DSL` module is a thin wrapper around `Victor::SVG` that provides
 access to the SVG object, and direct access to several of its methods.
 
-
 | Method    | Description                                       |
 |:----------|:--------------------------------------------------|
 | `svg`     | Returns a [`Victor::SVG`](svg) instance           |
