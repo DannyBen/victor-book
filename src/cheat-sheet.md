@@ -10,7 +10,7 @@ This document provides a quick reference for common concepts in Victor.
 
 ## Initializing
 
-||| Ruby Input
+||| :icon-ruby: Ruby Input
 ```ruby
 # 1. Default attributes
 svg = Victor::SVG.new
@@ -29,7 +29,7 @@ svg = Victor::SVG.new viewBox: '0 0 100 100' do
 end
 ```
 
-||| SVG Output
+||| :icon-code: SVG Output
 ```svg
 <!-- 1 -->
 <svg width="100%" height="100%">
@@ -55,7 +55,7 @@ end
 
 ## SVG tags
 
-||| Ruby Input
+||| :icon-ruby: Ruby Input
 ```ruby
 # 1. Anything
 svg.anything
@@ -76,7 +76,7 @@ svg.build do
 end
 ```
 
-||| SVG Output
+||| :icon-code: SVG Output
 ```svg
 <!-- 1 -->
 <anything />
@@ -99,7 +99,7 @@ end
 
 ## Nesting
 
-||| Ruby Input
+||| :icon-ruby: Ruby Input
 ```ruby
 # 1. Using a block
 svg.g transform: 'translate(10 10)' do
@@ -121,7 +121,7 @@ svg.build do
 end
 ```
 
-||| SVG Output
+||| :icon-code: SVG Output
 ```svg
 <!-- 1 -->
 <g transform="translate(10 10)">
@@ -148,7 +148,7 @@ end
 
 ## Attributes
 
-||| Ruby Input
+||| :icon-ruby: Ruby Input
 ```ruby
 # 1. underscore => hyphen
 svg.text font_family: 'Roboto'
@@ -168,7 +168,7 @@ svg.rect style: { fill: :blue, stroke: :red }
 ```
 
 
-||| SVG Output
+||| :icon-code: SVG Output
 ```svg
 <!-- 1 -->
 <text font-family="Roboto">
@@ -192,7 +192,7 @@ svg.rect style: { fill: :blue, stroke: :red }
 
 ## CSS
 
-||| Ruby Input
+||| :icon-ruby: Ruby Input
 ```ruby
 # 1. Hash keys
 svg.css['.box'] = { fill: :red }
@@ -220,7 +220,7 @@ CSS
 ```
 
 
-||| SVG Output
+||| :icon-code: SVG Output
 ```svg
 <!-- 1 -->
 <style>

@@ -13,11 +13,11 @@ SVG images using Ruby code.
 
 Building a Meter Bar with Victor.
 
-+++ SVG Image
++++ :icon-image: SVG Image
 ![](/examples/meter/meter.svg)
-+++ Ruby Input
++++ :icon-ruby: Ruby Input
 :::code source="/examples/meter/meter.rb" :::
-+++ SVG Code
++++ :icon-code: SVG Code
 :::code source="/examples/meter/meter.svg" :::
 +++
 
