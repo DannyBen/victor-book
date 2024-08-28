@@ -1,10 +1,9 @@
 ---
-label: Cheat Sheet
-icon: paste
+icon: pin
 order: 95
 ---
 
-# Cheat Sheet
+# Quick Reference
 
 This document provides a quick reference for common concepts in Victor.
 

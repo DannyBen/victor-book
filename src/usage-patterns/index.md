@@ -1,7 +1,7 @@
 ---
 expanded: false
 icon: milestone
-order: 80
+order: 70
 ---
 
 # Ways to Use Victor
