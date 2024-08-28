@@ -31,33 +31,70 @@ tags.
 
 ### Key Features
 
-1. **Initialization**  
-   Create an SVG with attributes like `viewBox` or `style`:
-   ```ruby
-   svg = Victor::SVG.new viewBox: '0 0 100 100'
-   ```
-2. **Elements**  
-   Add SVG elements with attributes by calling methods with the desired tag name:
-   ```ruby
-   svg.rect x: 0, y: 10, width: 100
-   ```
-3. **Nesting**  
-   Nest elements using blocks:
-   ```ruby
-   svg.g transform: 'translate(10 10)' do
-     svg.rect x: 10, y: 10
-   end
-   ```
-4. **Attributes and Inline Styling**  
-   Attributes are converted as you would expect:
-   ```ruby
-   svg.rect style: { fill: :blue, font_family: 'Roboto' }
-   ```
-5. **CSS**  
-   Define stylesheets using a hash:
-   ```ruby
-   svg.css['.box'] = { fill: :red }
-   ```
+||| Initialization
+
+Create an SVG with attributes like `viewBox` or `style`:
+
+||| :icon-ruby:
+
+```ruby
+svg = Victor::SVG.new viewBox: '0 0 100 100'
+```
+
+|||
+
+
+||| SVG Elements
+
+Add SVG elements with attributes by calling methods with the desired tag name:
+
+||| :icon-ruby:
+
+```ruby
+svg.rect x: 0, y: 10, width: 100
+```
+
+|||
+
+||| Nesting
+
+Nest elements using blocks:
+
+||| :icon-ruby:
+
+```ruby
+svg.g transform: 'translate(10 10)' do
+  svg.rect x: 10, y: 10
+end
+```
+
+|||
+
+||| Attributes and Inline Styling
+
+Attributes are converted as you would expect:
+
+||| :icon-ruby:
+
+```ruby
+svg.rect style: {
+  fill: :blue, font_family: 'Roboto'
+}
+```
+
+|||
+
+||| CSS
+
+Define stylesheets using a hash:
+
+||| :icon-ruby:
+
+```ruby
+svg.css['.box'] = { fill: :red }
+```
+
+|||
 
 ## Installation
 
