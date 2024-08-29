@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778191646725">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778220845967">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.778191646725" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.778220845967" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778191646725" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778220845967" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778191646725" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778191646725" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778220845967" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778220845967" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -239,7 +239,7 @@ flexible SVG element generation.</p>
 <doc-anchor-target id="initialize">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#initialize">#</doc-anchor-trigger>
-        <span><code v-pre>initialize</code></span>
+        <span><code v-pre>#initialize</code></span>
     </h3>
 </doc-anchor-target>
 <p>Creates a new instance of <code v-pre>SVG</code>.</p>
@@ -289,10 +289,10 @@ end</code></pre>
         <span>Building</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="element">
+<doc-anchor-target id="tag--element">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#element">#</doc-anchor-trigger>
-        <span><code v-pre>element</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tag--element">#</doc-anchor-trigger>
+        <span><code v-pre>#tag</code> / <code v-pre>#element</code></span>
     </h3>
 </doc-anchor-target>
 <p>Adds an SVG element to the content.</p>
@@ -341,14 +341,14 @@ names.</li>
        <template #title><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M5.873 3.26A.748.748 0 0 1 6.44 3h11.31c.223 0 .434.099.576.27l5 6a.75.75 0 0 1-.028.992l-10.75 11.5a.75.75 0 0 1-1.096 0l-10.75-11.5a.75.75 0 0 1-.02-1.003l5.19-6Zm.91 1.24L2.258 9.73 12 20.153l9.75-10.43L17.399 4.5Z"/></g></g></svg> Example</template>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-ruby"><code v-pre class="language-ruby">svg.element :rect, x: '10', y: '10', width: '100', height: '100'
-svg.element :text, 'Hello, World!', x: '50', y: '50'</code></pre>
+svg.tag :text, 'Hello, World!', x: '50', y: '50'</code></pre>
 </doc-codeblock></div>
    </doc-panel>
 </doc-panels>
 <doc-anchor-target id="build">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#build">#</doc-anchor-trigger>
-        <span><code v-pre>build</code></span>
+        <span><code v-pre>#build</code></span>
     </h3>
 </doc-anchor-target>
 <p>Evaluates a block in the context of the SVG instance, allowing dynamic SVG
@@ -385,10 +385,10 @@ end</code></pre>
 </doc-codeblock></div>
    </doc-panel>
 </doc-panels>
-<doc-anchor-target id="append-embed">
+<doc-anchor-target id="append--embed--">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#append-embed">#</doc-anchor-trigger>
-        <span><code v-pre>append</code> / <code v-pre>embed</code> / <code v-pre>&lt;&lt;</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#append--embed--">#</doc-anchor-trigger>
+        <span><code v-pre>#append</code> / <code v-pre>#embed</code> / <code v-pre>#&lt;&lt;</code></span>
     </h3>
 </doc-anchor-target>
 <p>Adds content from another source to the SVG. This can be used to compose SVG
@@ -430,7 +430,7 @@ host.embed guest</code></pre>
 <doc-anchor-target id="css">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#css">#</doc-anchor-trigger>
-        <span><code v-pre>css</code></span>
+        <span><code v-pre>#css</code></span>
     </h3>
 </doc-anchor-target>
 <p>Manages CSS definitions for the SVG.</p>
@@ -492,7 +492,7 @@ svg['.hint'] = { color: :red, font_size: '12px' }</code></pre>
 <doc-anchor-target id="save">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#save">#</doc-anchor-trigger>
-        <span><code v-pre>save</code></span>
+        <span><code v-pre>#save</code></span>
     </h3>
 </doc-anchor-target>
 <p>Saves the SVG content to a file.</p>
@@ -541,7 +541,7 @@ svg.save 'outfile.svg', template: 'path/to/template', glue: ''</code></pre>
 <doc-anchor-target id="render">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#render">#</doc-anchor-trigger>
-        <span><code v-pre>render</code></span>
+        <span><code v-pre>#render</code></span>
     </h3>
 </doc-anchor-target>
 <p>Renders the full SVG string, including its CSS and SVG header.</p>
@@ -582,7 +582,7 @@ svg.save 'outfile.svg', template: 'path/to/template', glue: ''</code></pre>
 <doc-anchor-target id="to_s">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#to_s">#</doc-anchor-trigger>
-        <span><code v-pre>to_s</code></span>
+        <span><code v-pre>#to_s</code></span>
     </h3>
 </doc-anchor-target>
 <p>Converts the SVG content to a string. This method is used internally to join the
@@ -621,7 +621,7 @@ If you want the full SVG string, see <doc-anchor-trigger to="#render"><code v-pr
 <doc-anchor-target id="setup">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setup">#</doc-anchor-trigger>
-        <span><code v-pre>setup</code></span>
+        <span><code v-pre>#setup</code></span>
     </h3>
 </doc-anchor-target>
 <p>Sets up the initial attributes for the SVG.</p>
@@ -651,7 +651,7 @@ typically not required for basic usage.</p>
 <doc-anchor-target id="content">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#content">#</doc-anchor-trigger>
-        <span><code v-pre>content</code></span>
+        <span><code v-pre>#content</code></span>
     </h3>
 </doc-anchor-target>
 <p>Manages the array of SVG lines. This is used internally to assemble the SVG
@@ -659,7 +659,7 @@ content.</p>
 <doc-anchor-target id="svg_attributes">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#svg_attributes">#</doc-anchor-trigger>
-        <span><code v-pre>svg_attributes</code></span>
+        <span><code v-pre>#svg_attributes</code></span>
     </h3>
 </doc-anchor-target>
 <p>Holds the attributes for the SVG element, such as <code v-pre>width</code>, <code v-pre>height</code>, and other
@@ -676,7 +676,7 @@ svg.svg_attributes.height = '200'</code></pre>
 <doc-anchor-target id="template">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#template">#</doc-anchor-trigger>
-        <span><code v-pre>template</code></span>
+        <span><code v-pre>#template</code></span>
     </h3>
 </doc-anchor-target>
 <p>Specifies the SVG template to use. This is rarely needed as the default template is often sufficient.</p>
@@ -690,10 +690,11 @@ svg.template = 'path/to/template'</code></pre>
 <doc-anchor-target id="glue">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#glue">#</doc-anchor-trigger>
-        <span><code v-pre>glue</code></span>
+        <span><code v-pre>#glue</code></span>
     </h3>
 </doc-anchor-target>
-<p>Specifies the string to use between SVG elements. This is rarely needed as the default glue is often sufficient.</p>
+<p>Specifies the string to use between SVG elements. This is rarely needed as the
+default glue is often sufficient.</p>
 
                                 
                                 <!-- Required only on API pages -->

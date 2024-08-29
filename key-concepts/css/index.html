@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778191646725">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778220845967">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.778191646725" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.778220845967" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778191646725" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778220845967" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778191646725" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778191646725" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778220845967" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778220845967" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -230,10 +230,10 @@
 <p>CSS gets a special treatment in Victor, with these goals in mind:</p>
 <ol>
 <li>Provide a DSL-like syntax for CSS rules.</li>
-<li>Handle CSS separately, in order to allow merging CSS rules from multiple SVG
-images into one.</li>
+<li>Handle CSS separately, in order to allow merging CSS from multiple SVG
+images.</li>
 </ol>
-<p><code v-pre>Victor::SVG</code> has a <code v-pre>css</code> property, which can contain either a Hash or a String:</p>
+<p><code v-pre>Victor::SVG</code> has a <code v-pre>#css</code> property, which can contain either a Hash or a String:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-ruby"><code v-pre class="language-ruby">svg = Victor::SVG.new
 
@@ -304,15 +304,16 @@ end</code></pre>
         <span>Using a string</span>
     </h3>
 </doc-anchor-target>
-<p>&#x60;&#x60;&#x60;ruby&#x60;
-svg.css = &lt;&lt;CSS
-.main {
-stroke: green;
-stroke-width: 2;
-fill: yellow;
-opacity: 0.7;
-}
-CSS</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">svg.css = &lt;&lt;CSS
+  .main {
+    stroke: green;
+    stroke-width: 2;
+    fill: yellow;
+    opacity: 0.7;
+  }
+CSS</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="using-an-external-file">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#using-an-external-file">#</doc-anchor-trigger>
@@ -391,6 +392,15 @@ CSS</p>
 <p>This is achieved thanks to the fact that when Victor encounters an array
 in the CSS hash, it will prefix each of the array elements with the hash
 key, so the above will result in two <code v-pre>@import url(...)</code> rows.</p>
+<doc-anchor-target id="see-also">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>
+        <span>See Also</span>
+    </h2>
+</doc-anchor-target>
+<ul class="list-icon">
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg> <a href="https://github.com/DannyBen/victor/blob/master/lib/victor/css.rb"><code v-pre>Victor::CSS</code> source code</a></li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -410,7 +420,7 @@ key, so the above will result in two <code v-pre>@import url(...)</code> rows.</
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">SVG Attribute</span>
+                                                <span class="block mt-1">SVG Attributes</span>
                                             </span>
                                         </a>
                                     </div>

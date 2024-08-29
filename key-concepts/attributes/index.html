@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778191646725">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778220845967">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>SVG Attribute | Victor - SVG Image Builder</title>
-    <meta name="title" content="SVG Attribute | Victor - SVG Image Builder">
-    <meta name="description" content="Initialize your SVG image:">
+    <title>SVG Attributes | Victor - SVG Image Builder</title>
+    <meta name="title" content="SVG Attributes | Victor - SVG Image Builder">
+    <meta name="description" content="Victor converts the options hash you pass to a tag into SVG attributes:">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://victor.dannyb.co/key-concepts/attributes/">
@@ -19,25 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://victor.dannyb.co/key-concepts/attributes/">
-    <meta property="og:title" content="SVG Attribute | Victor - SVG Image Builder">
-    <meta property="og:description" content="Initialize your SVG image:">
-    <meta property="og:image" content="https://cdn.rawgit.com/DannyBen/victor/master/examples/14_composite_svg.svg">
+    <meta property="og:title" content="SVG Attributes | Victor - SVG Image Builder">
+    <meta property="og:description" content="Victor converts the options hash you pass to a tag into SVG attributes:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://victor.dannyb.co/key-concepts/attributes/">
-    <meta property="twitter:title" content="SVG Attribute | Victor - SVG Image Builder">
-    <meta property="twitter:description" content="Initialize your SVG image:">
-    <meta property="twitter:image" content="https://cdn.rawgit.com/DannyBen/victor/master/examples/14_composite_svg.svg">
+    <meta property="twitter:title" content="SVG Attributes | Victor - SVG Image Builder">
+    <meta property="twitter:description" content="Victor converts the options hash you pass to a tag into SVG attributes:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.778191646725" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.778220845967" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778191646725" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778220845967" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778191646725" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778191646725" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778220845967" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.778220845967" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -223,179 +221,164 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="svg-attribute" class="break-words">
+<doc-anchor-target id="svg-attributes" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#svg-attribute">#</doc-anchor-trigger>
-        <span>SVG Attribute</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#svg-attributes">#</doc-anchor-trigger>
+        <span>SVG Attributes</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="usage">
+<p>Victor converts the options hash you pass to a tag into SVG attributes:</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title border-r">
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M5.873 3.26A.748.748 0 0 1 6.44 3h11.31c.223 0 .434.099.576.27l5 6a.75.75 0 0 1-.028.992l-10.75 11.5a.75.75 0 0 1-1.096 0l-10.75-11.5a.75.75 0 0 1-.02-1.003l5.19-6Zm.91 1.24L2.258 9.73 12 20.153l9.75-10.43L17.399 4.5Z"/></g></g></svg> Ruby Input</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title">
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06Zm-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0Z"/></g></g></svg> SVG Output</span>
+    </div>
+    <div class="docs-columns-code docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-ruby"><code v-pre class="language-ruby">svg.rect x: 2, y: 2,
+  width: 200, height: 200</code></pre>
+</doc-codeblock></div>
+    </div>
+    <div class="docs-columns-code docs-columns-content">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-markup"><code v-pre class="language-markup">&lt;rect x=&quot;2&quot; y=&quot;2&quot;
+  width=&quot;200&quot; height=&quot;200&quot;/&gt;</code></pre>
+</doc-codeblock></div>
+    </div>
+</div>
+<doc-anchor-target id="ruby-to-css-transformation-rules">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
-        <span>Usage</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ruby-to-css-transformation-rules">#</doc-anchor-trigger>
+        <span>Ruby-to-CSS Transformation Rules</span>
     </h2>
 </doc-anchor-target>
-<p>Initialize your SVG image:</p>
+<doc-anchor-target id="underscores-to-hyphens">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#underscores-to-hyphens">#</doc-anchor-trigger>
+        <span>Underscores to hyphens</span>
+    </h3>
+</doc-anchor-target>
+<p>Underscores in attribute names, are converted to hyphens
+(<code v-pre>font_family</code> <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></g></g></svg> <code v-pre>font-family</code>):</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title border-r">
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M5.873 3.26A.748.748 0 0 1 6.44 3h11.31c.223 0 .434.099.576.27l5 6a.75.75 0 0 1-.028.992l-10.75 11.5a.75.75 0 0 1-1.096 0l-10.75-11.5a.75.75 0 0 1-.02-1.003l5.19-6Zm.91 1.24L2.258 9.73 12 20.153l9.75-10.43L17.399 4.5Z"/></g></g></svg> Ruby Input</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title">
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06Zm-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0Z"/></g></g></svg> SVG Output</span>
+    </div>
+    <div class="docs-columns-code docs-columns-content border-r border-gray-200 dark:border-dark-650">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">require 'victor'
-svg = Victor::SVG.new</code></pre>
+<pre class="language-ruby"><code v-pre class="language-ruby">svg.text &quot;Victor&quot;,
+  x: 40, y: 50,
+  font_family: 'Arial',
+  font_weight: :bold,
+  font_size: 40</code></pre>
 </doc-codeblock></div>
-<p>Any option you provide to <code v-pre>SVG.new</code> will be added as an attribute to the
-main <code v-pre>&lt;svg&gt;</code> element. By default, <code v-pre>height</code> and <code v-pre>width</code> are set to 100%.</p>
+    </div>
+    <div class="docs-columns-code docs-columns-content">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg = Victor::SVG.new width: '100%', height: '100%'
-# same as just Victor::SVG.new
-
-svg = Victor::SVG.new width: '100%', height: '100%', viewBox: &quot;0 0 200 100&quot;</code></pre>
+<pre class="language-markup"><code v-pre class="language-markup">&lt;text
+  x=&quot;40&quot; y=&quot;50&quot;
+  font-family=&quot;arial&quot;
+  font-weight=&quot;bold&quot;
+  font-size=&quot;40&quot;&gt;
+  Victor
+&lt;/text&gt;</code></pre>
 </doc-codeblock></div>
-<p>As an alternative, you can set the root SVG attributes using the <code v-pre>setup</code> method:</p>
+    </div>
+</div>
+<doc-anchor-target id="symbol-values">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#symbol-values">#</doc-anchor-trigger>
+        <span>Symbol values</span>
+    </h3>
+</doc-anchor-target>
+<p>Symbol values are treated as strings:</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title border-r">
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M5.873 3.26A.748.748 0 0 1 6.44 3h11.31c.223 0 .434.099.576.27l5 6a.75.75 0 0 1-.028.992l-10.75 11.5a.75.75 0 0 1-1.096 0l-10.75-11.5a.75.75 0 0 1-.02-1.003l5.19-6Zm.91 1.24L2.258 9.73 12 20.153l9.75-10.43L17.399 4.5Z"/></g></g></svg> Ruby Input</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title">
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06Zm-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0Z"/></g></g></svg> SVG Output</span>
+    </div>
+    <div class="docs-columns-code docs-columns-content border-r border-gray-200 dark:border-dark-650">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">require 'victor'
-svg = Victor::SVG.new
-svg.setup width: 200, height: 150</code></pre>
+<pre class="language-ruby"><code v-pre class="language-ruby">svg.rect fill: :red</code></pre>
 </doc-codeblock></div>
-<p>Victor uses a single method (<code v-pre>element</code>) to generate all SVG elements:</p>
+    </div>
+    <div class="docs-columns-code docs-columns-content">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.element :rect, x: 2, y: 2, width: 200, height: 200
-# =&gt; &lt;rect x=&quot;2&quot; y=&quot;2&quot; width=&quot;200&quot; height=&quot;200&quot;/&gt;</code></pre>
+<pre class="language-markup"><code v-pre class="language-markup">&lt;rect fill=&quot;red&quot;/&gt;</code></pre>
 </doc-codeblock></div>
-<p>But you can omit it. Calls to any other method, will be delegated to the
-<code v-pre>element</code> method, so normal usage looks more like this:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.rect x: 2, y: 2, width: 200, height: 200
-# =&gt; &lt;rect x=&quot;2&quot; y=&quot;2&quot; width=&quot;200&quot; height=&quot;200&quot;/&gt;</code></pre>
-</doc-codeblock></div>
-<p>In other words, these are the same:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.element :anything, option: 'value'
-svg.anything option: 'value'</code></pre>
-</doc-codeblock></div>
-<p>You can use the <code v-pre>build</code> method, to generate the SVG with a block</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.build do 
-  rect x: 0, y: 0, width: 100, height: 100, fill: '#ccc'
-  rect x: 20, y: 20, width: 60, height: 60, fill: '#f99'
-end</code></pre>
-</doc-codeblock></div>
+    </div>
+</div>
+<doc-anchor-target id="hash-value">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hash-value">#</doc-anchor-trigger>
+        <span>Hash value</span>
+    </h3>
+</doc-anchor-target>
 <p>If the value of an attribute is a hash, it will be converted to a
-style-compatible string:</p>
+style-compatible string, where keys and values are combined with a colon (<code v-pre>:</code>),
+and key-value pairs are combined with a semicolon (<code v-pre>;</code>):</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title border-r">
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M5.873 3.26A.748.748 0 0 1 6.44 3h11.31c.223 0 .434.099.576.27l5 6a.75.75 0 0 1-.028.992l-10.75 11.5a.75.75 0 0 1-1.096 0l-10.75-11.5a.75.75 0 0 1-.02-1.003l5.19-6Zm.91 1.24L2.258 9.73 12 20.153l9.75-10.43L17.399 4.5Z"/></g></g></svg> Ruby Input</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title">
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06Zm-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0Z"/></g></g></svg> SVG Output</span>
+    </div>
+    <div class="docs-columns-code docs-columns-content border-r border-gray-200 dark:border-dark-650">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.rect x: 0, y: 0, width: 100, height: 100, style: { stroke: '#ccc', fill: 'red' }
-# =&gt; &lt;rect x=0 y=0 width=100 height=100 style=&quot;stroke:#ccc; fill:red&quot;/&gt;</code></pre>
+<pre class="language-ruby"><code v-pre class="language-ruby">svg.rect x: 0, y: 0,
+  style: { stroke: '#ccc', fill: 'red' }</code></pre>
 </doc-codeblock></div>
+    </div>
+    <div class="docs-columns-code docs-columns-content">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-markup"><code v-pre class="language-markup">&lt;rect x=&quot;0&quot; y=&quot;0&quot;
+  style=&quot;stroke:#ccc; fill:red&quot;/&gt;</code></pre>
+</doc-codeblock></div>
+    </div>
+</div>
+<doc-anchor-target id="array-value">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#array-value">#</doc-anchor-trigger>
+        <span>Array value</span>
+    </h3>
+</doc-anchor-target>
 <p>If the value of an attribute is an array, it will be converted to a
-space delimited string:</p>
+space-delimited string:</p>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title border-r">
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M5.873 3.26A.748.748 0 0 1 6.44 3h11.31c.223 0 .434.099.576.27l5 6a.75.75 0 0 1-.028.992l-10.75 11.5a.75.75 0 0 1-1.096 0l-10.75-11.5a.75.75 0 0 1-.02-1.003l5.19-6Zm.91 1.24L2.258 9.73 12 20.153l9.75-10.43L17.399 4.5Z"/></g></g></svg> Ruby Input</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-mono leading-snug text-white docs-columns-code-title">
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06Zm-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0Z"/></g></g></svg> SVG Output</span>
+    </div>
+    <div class="docs-columns-code docs-columns-content border-r border-gray-200 dark:border-dark-650">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.path d: ['M', 150, 0, 'L', 75, 200, 'L', 225, 200, 'Z']
-# =&gt; &lt;path d=&quot;M 150 0 L 75 200 L 225 200 Z&quot;/&gt;</code></pre>
+<pre class="language-ruby"><code v-pre class="language-ruby">svg.polygon points: %w[0,0 50,100 100,0]</code></pre>
 </doc-codeblock></div>
-<p>For SVG elements that have an inner content - such as text - simply pass it as
-the first argument:</p>
+    </div>
+    <div class="docs-columns-code docs-columns-content">
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.text &quot;Victor&quot;, x: 40, y: 50
-# =&gt; &lt;text x=&quot;40&quot; y=&quot;50&quot;&gt;Victor&lt;/text&gt;</code></pre>
+<pre class="language-markup"><code v-pre class="language-markup">&lt;polygon points=&quot;0,0 50,100 100,0&quot;/&gt;</code></pre>
 </doc-codeblock></div>
-<p>You can also nest elements with blocks:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.build do
-  g font_size: 30, font_family: 'arial', fill: 'white' do
-    text &quot;Scalable Victor Graphics&quot;, x: 40, y: 50
-  end
-end
-# =&gt; &lt;g font-size=&quot;30&quot; font-family=&quot;arial&quot; fill=&quot;white&quot;&gt;
-#      &lt;text x=&quot;40&quot; y=&quot;50&quot;&gt;Scalable Victor Graphics&lt;/text&gt;
-#    &lt;/g&gt;</code></pre>
-</doc-codeblock></div>
-<p>Underscores in attribute names are converted to dashes:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.text &quot;Victor&quot;, x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font_size: 40
-# =&gt; &lt;text x=&quot;40&quot; y=&quot;50&quot; font-family=&quot;arial&quot; font-weight=&quot;bold&quot; font-size=&quot;40&quot;&gt;
-#      Victor
-#    &lt;/text&gt;</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="features">
+    </div>
+</div>
+<doc-anchor-target id="see-also">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#features">#</doc-anchor-trigger>
-        <span>Features</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>
+        <span>See Also</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="composite-svg">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#composite-svg">#</doc-anchor-trigger>
-        <span>Composite SVG</span>
-    </h3>
-</doc-anchor-target>
-<p>Victor also supports the ability to combine several smaller SVG objects into
-one using the <code v-pre>&lt;&lt;</code> operator or the <code v-pre>#append</code> method.</p>
-<p>This operator expects to receive any object that responds to <code v-pre>#to_s</code> (can be another <code v-pre>SVG</code> object).</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">require 'victor'
-include Victor
-
-# Create a reusable SVG object
-frame = SVG.new
-frame.rect x: 0, y: 0, width: 100, height: 100, fill: '#336'
-frame.rect x: 10, y: 10, width: 80, height: 80, fill: '#fff'
-
-# ... and another
-troll = SVG.new
-troll.circle cx: 50, cy: 60, r: 24, fill: 'yellow'
-troll.polygon points: %w[24,50 50,14 76,54], fill: 'red'
-
-# Combine objects into a single image
-svg = SVG.new viewBox: '0 0 100 100'
-svg &lt;&lt; frame
-svg &lt;&lt; troll
-
-# ... and save it
-svg.save 'framed-troll'</code></pre>
-</doc-codeblock></div>
-<p>Output:</p>
-<p><figure class="content-center">
-    <a href="https://cdn.rawgit.com/DannyBen/victor/master/examples/14_composite_svg.svg">
-        <img src="https://cdn.rawgit.com/DannyBen/victor/master/examples/14_composite_svg.svg" alt="troll">
-    </a>
-    <figcaption class="caption">troll</figcaption>
-</figure>
-</p>
-<p>These two calls are identical:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg &lt;&lt; other
-svg.append other</code></pre>
-</doc-codeblock></div>
-<p>To make this common use case a little easier to use, you can use a block when instantiating a new <code v-pre>SVG</code> object:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">troll = SVG.new do
-  circle cx: 50, cy: 60, r: 24, fill: 'yellow'
-end</code></pre>
-</doc-codeblock></div>
-<p>Which is the same as:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">troll = SVG.new
-troll.build do
-  circle cx: 50, cy: 60, r: 24, fill: 'yellow'
-end</code></pre>
-</doc-codeblock></div>
-<p>Another approach to a more modular SVG composition, would be to subclass
-<code v-pre>Victor::SVG</code>.</p>
-<p>See the <a href="https://github.com/DannyBen/victor/tree/master/examples#14-composite-svg">composite svg example</a>
-or the <a href="https://github.com/DannyBen/victor/tree/master/examples#15-subclassing">subclassing example</a>
-for more details.</p>
-<doc-anchor-target id="saving-the-output">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#saving-the-output">#</doc-anchor-trigger>
-        <span>Saving the Output</span>
-    </h3>
-</doc-anchor-target>
-<p>Generate the full SVG to a string with <code v-pre>render</code>:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">result = svg.render</code></pre>
-</doc-codeblock></div>
-<p>Or, save it to a file with <code v-pre>save</code>:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ruby"><code v-pre class="language-ruby">svg.save 'filename'
-# the '.svg' extension is optional</code></pre>
-</doc-codeblock></div>
+<ul class="list-icon">
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg> <a href="https://github.com/DannyBen/victor/blob/master/lib/victor/attributes.rb"><code v-pre>Victor::Attributes</code> source code</a></li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -471,6 +454,6 @@ for more details.</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "SVG Attribute", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "SVG Attributes", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
