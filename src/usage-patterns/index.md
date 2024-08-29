@@ -13,6 +13,15 @@ You can begin with the basics, using straightforward method calls to define your
 SVG structure. Once you're comfortable with the fundamentals, you might want to
 explore more structured techniques.
 
+!!!success Tip
+
+All examples, including source code and output SVG, are available in the GitHub
+repository for this site.
+
+[!button :icon-mark-github: View Examples on GitHub](https://github.com/DannyBen/victor-book/tree/master/src/examples)
+
+!!!
+
 | Approach                       | When to Choose                                                                                                                  |
 |:-------------------------------|:--------------------------------------------------------------------------------------------------------------------------------|
 | **[Basic](basic)**             | Ideal for Victor newcomers.<br>This approach uses minimal code for creating SVGs.                                               |
