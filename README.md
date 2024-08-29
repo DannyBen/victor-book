@@ -15,3 +15,12 @@ For development purposes, you will need these:
 
 - [opcode](https://github.com/DannyBen/opcode)
 - All the ruby dependencies - `bundle install`
+
+## Favicon
+
+In the examples/favicon directory:
+
+1. .rb => .svg: `ruby favicon.rb`
+2. .svg => .png: `cairosvg favicon.svg --output-width 512 -o favicon.png`
+3. .png => .ico: <https://www.png2ico.com/>
+

@@ -3,6 +3,7 @@ Arial
 arial
 BoardCell
 br
+cairosvg
 ccc
 CLI
 cli
@@ -13,10 +14,12 @@ cy
 defs
 DSL
 dsl
+favicon
 fff
 GameBoard
 GamePiece
 github
+ico
 Icodi
 icodi
 identicon
@@ -25,6 +28,7 @@ JetBrains
 Minichart
 minichart
 outfile
+png
 Proc
 px
 rb
@@ -36,9 +40,9 @@ stylesheets
 subclassing
 SVG
 svg
+SVG's
 SVGBase
 SVGs
-SVG's
 Tagless
 tspan
 url
