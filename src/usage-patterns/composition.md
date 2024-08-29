@@ -5,29 +5,30 @@ order: 50
 
 # Composition
 
-By requiring `victor/script`, 
-by having one component call and reference other components.
+Create multiple `Victor::SVG` elements, and merge them together using `#append`.
+
 
 ## Target Image
 
-In the example below, we are creating this icon.
+In the example below, we are creating the Victor logo.
 
-![](/examples/heart/heart.svg)
+![](/examples/logo/logo.svg)
 
 ## Usage Pattern
 
-1. Instantiate a `Victor::SVG` class.
-2. Create SVG elements by utilizing its `method_missing` behavior, which allows
-   you to call `svg.rect`, `svg.circle`, etc., to generate any SVG tag.
+1. Create multiple `Victor::SVG` objects, all originating from the same coordinate
+   (e.g., 0, 0).
+2. Combine these objects into a final `Victor::SVG` object by using `#append`
+   (or its alias `#embed`) and applying SVG position transformations.
 
 ## Code
 
-:::code source="/examples/heart/heart.rb" :::
+:::code source="/examples/logo/logo.rb" :::
 
 
 ## See Also
 
 {.list-icon}
-- :icon-code: [DSL Module Reference](/class-reference/dsl)
-- :icon-mark-github: [`victor/script` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/script.rb)
-- :icon-mark-github: [`Victor::DSL` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/dsl.rb)
+- :icon-code: [SVG Class Reference](/class-reference/svg)
+- :icon-mark-github: [`Victor::SVG` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/svg.rb)
+- :icon-mark-github: [`Victor::SVGBase` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/svg_base.rb)

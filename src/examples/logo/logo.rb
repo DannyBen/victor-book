@@ -1,5 +1,4 @@
 require 'victor'
-require 'debug'
 include Victor
 
 color = :black
