@@ -16,8 +16,8 @@ access to the SVG object, and direct access to several of its methods.
 | `#save`    | Delegated to [`Victor::SVG#save`](svg#save)              |
 | `#render`  | Delegated to [`Victor::SVG#render`](svg#render)          |
 | `#append`  | Delegated to [`Victor::SVG#append`](svg#append--embed--) |
-| `#element` | Delegated to [`Victor::SVG#element`](svg#element)        |
-| `#tag`     | Delegated to [`Victor::SVG#tag`](svg#tag)                |
+| `#element` | Delegated to [`Victor::SVG#element`](svg#tag--element)   |
+| `#tag`     | Delegated to [`Victor::SVG#tag`](svg#tag--element)       |
 | `#css`     | Delegated to [`Victor::SVG#css`](svg#css)                |
 
 
