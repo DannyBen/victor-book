@@ -1,6 +1,6 @@
 ---
 icon: dot
-order: C
+order: 40
 ---
 
 # Class

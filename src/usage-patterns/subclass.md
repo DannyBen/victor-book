@@ -1,6 +1,6 @@
 ---
 icon: dot
-order: D
+order: 30
 ---
 
 # Subclass
@@ -21,7 +21,7 @@ This class generates output identical to the
 ## Usage Pattern
 
 1. Create your own class and inherit from `Victor::SVG`.
-2. In the `#initialize` method, call `super` with any setup attributes.
+2. In the `#initialize` method, call `#super` with any setup attributes.
 3. Optionally, in the `#initialize` method, call an internal method to generate
    your SVG.
 

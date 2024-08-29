@@ -8,10 +8,10 @@ order: 80
 CSS gets a special treatment in Victor, with these goals in mind:
 
 1. Provide a DSL-like syntax for CSS rules.
-2. Handle CSS separately, in order to allow merging CSS rules from multiple SVG
-   images into one.
+2. Handle CSS separately, in order to allow merging CSS from multiple SVG
+   images.
 
-`Victor::SVG` has a `css` property, which can contain either a Hash or a String:
+`Victor::SVG` has a `#css` property, which can contain either a Hash or a String:
 
 ```ruby
 svg = Victor::SVG.new
@@ -71,7 +71,7 @@ svg.css = {
 
 ### Using a string
 
-```ruby`
+```ruby
 svg.css = <<CSS
   .main {
     stroke: green;
@@ -80,6 +80,7 @@ svg.css = <<CSS
     opacity: 0.7;
   }
 CSS
+```
 
 ### Using an external file
 
@@ -138,5 +139,7 @@ This is achieved thanks to the fact that when Victor encounters an array
 in the CSS hash, it will prefix each of the array elements with the hash
 key, so the above will result in two `@import url(...)` rows.
 
+## See Also
 
-
+{.list-icon}
+- :icon-mark-github: [`Victor::CSS` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/css.rb)

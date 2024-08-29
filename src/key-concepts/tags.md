@@ -5,11 +5,12 @@ order: 100
 
 # SVG Tags
 
-Victor uses a single method (`element`) to generate all SVG elements:
+Victor uses a single method - `#tag`, or its alias `#element` - to generate all
+SVG elements:
 
 ||| :icon-ruby: Ruby Input
 ```ruby
-svg.element :rect, x: 2, y: 2,
+svg.tag :rect, x: 2, y: 2,
   width: 200, height: 200
 ```
 
@@ -20,8 +21,8 @@ svg.element :rect, x: 2, y: 2,
 ```
 |||
 
-But you can omit it. Calls to any other method, will be delegated to the 
-`element` method, so normal usage looks more like this:
+But you can omit it. Calls to any other method will be delegated to the 
+`#tag` method, so normal usage looks more like this:
 
 ||| :icon-ruby: Ruby Input
 ```ruby
@@ -37,16 +38,17 @@ svg.rect x: 2, y: 2,
 
 |||
 
-In other words, these two lines will generate the same output:
+In other words, these three lines will generate the same output:
 
 ```ruby
+svg.tag :anything, option: 'value'
 svg.element :anything, option: 'value'
 svg.anything option: 'value'
 ```
 
-## Using the `build` block
+## Using the `#build` block
 
-You can use the `build` method, to generate the SVG with a block:
+You can use the `#build` method to generate the SVG with a block:
 
 ```ruby
 svg.build do 
@@ -57,7 +59,7 @@ end
 
 ## Nested Content
 
-For SVG elements that have an inner content - such as text - simply pass it as 
+For SVG elements that have inner content - such as text - simply pass it as 
 the first argument:
 
 ||| :icon-ruby: Ruby Input
@@ -96,9 +98,9 @@ end
 
 ## Tagless Elements
 
-Using underscore (`_`) as the element name will simply add the value to the 
-generated SVG, without any surrounding element. This is designed to allow
-generating something like this:
+Using underscore (`_`) as the element name will directly add the value to the
+generated SVG, without any surrounding element. This allows you to generate
+output like this:
 
 ||| :icon-ruby: Ruby Input
 ```ruby
@@ -125,9 +127,9 @@ end
 
 ## Character Escaping
 
-By default, plain text values are escaped automatically. In case you need
-the values to remain untouched, add a `!` suffix to the element's name.
-
+By default, plain text values are automatically escaped (e.g., `&` becomes
+`&amp;`). If you need the values to remain untouched, add a `!` suffix to the
+element's name.
 
 ||| :icon-ruby: Ruby Input
 ```ruby
@@ -154,3 +156,11 @@ end
 ```
 
 |||
+
+
+## See Also
+
+{.list-icon}
+- :icon-code: [SVG Class Reference](/class-reference/svg)
+- :icon-mark-github: [`Victor::SVG` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/svg.rb)
+- :icon-mark-github: [`Victor::SVGBase` source code](https://github.com/DannyBen/victor/blob/master/lib/victor/svg_base.rb)

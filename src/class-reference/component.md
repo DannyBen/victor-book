@@ -28,7 +28,7 @@ by the object itself.
 
 Your class is required to implement these methods:
 
-### `body`
+### `#body`
 
 This method will be called once and once only when the SVG is rendered. In
 this method you are expected to build your SVG by calling `add.*` and
@@ -48,7 +48,7 @@ end
 ```
 ===
 
-### `height / width`
+### `#height` / `#width`
 
 Since components are designed to be composable, each component is required
 to advertise its point height and width. This becomes useful when a container
@@ -76,7 +76,7 @@ end
 
 ## Optional Implementation Methods
 
-### `x / y`
+### `#x` / `#y`
 
 Similar to the `width` and `height` properties, you may define the `x` and `y`
 origin of your object. By default, these are set to 0.
@@ -107,7 +107,7 @@ end
 ===
 
 
-### `style`
+### `#style`
 
 The Component class is designed to allow each component to define its own CSS
 stylesheet, and is responsible for merging all styles together whenever you 
@@ -146,7 +146,7 @@ end
 ```
 ===
 
-### `append` / `embed`
+### `#append` / `#embed`
 
 Use this method in your your `#body` implementation, to embed another
 component. This method is doing two things:
@@ -163,7 +163,7 @@ end
 ```
 ===
 
-### `svg`
+### `#svg`
 
 Returns the final `Victor::SVG` object, after rendering all its guest
 components and their CSS styles.
@@ -171,7 +171,7 @@ components and their CSS styles.
 Under most normal circumstances, you do not need to call this method directly,
 it is called as needed by other methods.
 
-!!!warning Attention
+!!!warning Important
 Once the `svg` method was called, the rendered SVG is considered frozen. This
 mechanism is in place in order to ensure that your `body` implementation is
 called only once, and applies to other methods (such as `render` and `save`)
@@ -181,11 +181,12 @@ that call `svg` under the hood.
 
 ## Delegated Methods
 
-| Method    | Description                                       |
-|:----------|:--------------------------------------------------|
-| `save`    | Delegated to [`Victor::SVG#save`](svg#save)       |
-| `render`  | Delegated to [`Victor::SVG#render`](svg#render)   |
-| `content` | Delegated to [`Victor::SVG#content`](svg#content) |
-| `element` | Delegated to [`Victor::SVG#element`](svg#element) |
-| `css`     | Delegated to [`Victor::SVG#css`](svg#css)         |
-| `to_s`    | Delegated to [`Victor::SVG#to_s`](svg#to_s)       |
+| Method     | Description                                            |
+|:-----------|:-------------------------------------------------------|
+| `#save`    | Delegated to [`Victor::SVG#save`](svg#save)            |
+| `#render`  | Delegated to [`Victor::SVG#render`](svg#render)        |
+| `#content` | Delegated to [`Victor::SVG#content`](svg#content)      |
+| `#element` | Delegated to [`Victor::SVG#element`](svg#tag--element) |
+| `#tag`     | Delegated to [`Victor::SVG#tag`](svg#tag--element)     |
+| `#css`     | Delegated to [`Victor::SVG#css`](svg#css)              |
+| `#to_s`    | Delegated to [`Victor::SVG#to_s`](svg#to_s)            |

@@ -64,8 +64,9 @@ svg.anything
 svg.rect x: 0, y: 10
 
 
-# 3. Using #element
+# 3. Using #element / #tag
 svg.element :rect, x: 3, y: 4
+svg.tag :rect, x: 5, y: 6
 
 
 # 4. Using #build
@@ -87,6 +88,7 @@ end
 
 <!-- 3 -->
 <rect x="3" y="4"/>
+<rect x="5" y="6"/>
 
 
 <!-- 4 -->

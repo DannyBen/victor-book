@@ -4,7 +4,7 @@ icon: home
 order: 100
 ---
 
-# Welcome to Victor
+# Introduction to Victor
 
 **Victor** is a lightweight, zero-dependencies Ruby library that lets you build
 SVG images using Ruby code.
@@ -33,7 +33,7 @@ tags.
 
 ||| Initialization
 
-Create an SVG with attributes like `viewBox` or `style`:
+Create an SVG with attributes like `viewBox` or `style`.
 
 ||| :icon-ruby:
 
@@ -46,7 +46,7 @@ svg = Victor::SVG.new viewBox: '0 0 100 100'
 
 ||| SVG Elements
 
-Add SVG elements with attributes by calling methods with the desired tag name:
+Add SVG elements with attributes by calling methods with the desired tag name.
 
 ||| :icon-ruby:
 
@@ -58,7 +58,7 @@ svg.rect x: 0, y: 10, width: 100
 
 ||| Nesting
 
-Nest elements using blocks:
+Organize SVG elements hierarchically by nesting them within blocks.
 
 ||| :icon-ruby:
 
@@ -72,7 +72,7 @@ end
 
 ||| Attributes and Inline Styling
 
-Attributes are converted as you would expect:
+Apply attributes and inline styles directly within the method call.
 
 ||| :icon-ruby:
 
@@ -86,7 +86,7 @@ svg.rect style: {
 
 ||| CSS
 
-Define stylesheets using a hash:
+Define stylesheets using a hash.
 
 ||| :icon-ruby:
 

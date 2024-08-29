@@ -11,7 +11,7 @@ flexible SVG element generation.
 
 ## Initialization
 
-### `initialize`
+### `#initialize`
 
 Creates a new instance of `SVG`.
 
@@ -37,7 +37,7 @@ end
 
 ## Building
 
-### `element`
+### `#tag` / `#element`
 
 Adds an SVG element to the content.
 
@@ -60,12 +60,12 @@ Adds an SVG element to the content.
 
 ```ruby
 svg.element :rect, x: '10', y: '10', width: '100', height: '100'
-svg.element :text, 'Hello, World!', x: '50', y: '50'
+svg.tag :text, 'Hello, World!', x: '50', y: '50'
 ```
 
 ===
 
-### `build`
+### `#build`
 
 Evaluates a block in the context of the SVG instance, allowing dynamic SVG
 content creation.
@@ -86,7 +86,7 @@ end
 
 ===
 
-### `append` / `embed` / `<<`
+### `#append` / `#embed` / `#<<`
 
 Adds content from another source to the SVG. This can be used to compose SVG
 using other SVG objects.
@@ -110,7 +110,7 @@ host.embed guest
 
 ===
 
-### `css`
+### `#css`
 
 Manages CSS definitions for the SVG.
 
@@ -135,7 +135,7 @@ svg['.hint'] = { color: :red, font_size: '12px' }
 
 ## Rendering / Saving
 
-### `save`
+### `#save`
 
 Saves the SVG content to a file.
 
@@ -158,7 +158,7 @@ svg.save 'outfile.svg', template: 'path/to/template', glue: ''
 
 ===
 
-### `render`
+### `#render`
 
 Renders the full SVG string, including its CSS and SVG header.
 
@@ -177,7 +177,7 @@ puts svg.render
 
 ===
 
-### `to_s`
+### `#to_s`
 
 Converts the SVG content to a string. This method is used internally to join the
 SVG content with the specified `glue`.
@@ -197,7 +197,7 @@ puts svg
 
 ## Internal / Special Use
 
-### `setup`
+### `#setup`
 
 Sets up the initial attributes for the SVG.
 
@@ -211,12 +211,12 @@ typically not required for basic usage.
 | `attributes` | Hash | Initial attributes for the SVG, such as `:width`, `:height`, and `:viewBox`. |
 
 
-### `content`
+### `#content`
 
 Manages the array of SVG lines. This is used internally to assemble the SVG
 content.
 
-### `svg_attributes`
+### `#svg_attributes`
 
 Holds the attributes for the SVG element, such as `width`, `height`, and other
 SVG attributes.
@@ -229,7 +229,7 @@ svg.svg_attributes.height = '200'
 ```
 ===
 
-### `template`
+### `#template`
 
 Specifies the SVG template to use. This is rarely needed as the default template is often sufficient.
 
@@ -242,6 +242,7 @@ svg.template = 'path/to/template'
 
 ===
 
-### `glue`
+### `#glue`
 
-Specifies the string to use between SVG elements. This is rarely needed as the default glue is often sufficient.
+Specifies the string to use between SVG elements. This is rarely needed as the
+default glue is often sufficient.

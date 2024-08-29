@@ -1,6 +1,6 @@
 ---
 icon: dot
-order: F
+order: 10
 ---
 
 # Command Line

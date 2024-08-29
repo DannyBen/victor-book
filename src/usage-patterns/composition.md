@@ -1,25 +1,24 @@
 ---
 icon: dot
-order: 90
+order: 50
 ---
 
-# DSL
+# Composition
 
-Requiring `victor/script` provides a streamlined way to create SVG images by
-automatically setting up an `#svg` object.
+By requiring `victor/script`, 
+by having one component call and reference other components.
 
 ## Target Image
 
-In the example below, we are creating this image.
+In the example below, we are creating this icon.
 
 ![](/examples/heart/heart.svg)
 
 ## Usage Pattern
 
-1. Require `victor/script`.
-2. Use the `#setup` method to configure your SVG, like setting the `viewBox`.
-3. Use the `#build` method to start defining your SVG content.
-4. Save the SVG output to a file using the `#save` method.
+1. Instantiate a `Victor::SVG` class.
+2. Create SVG elements by utilizing its `method_missing` behavior, which allows
+   you to call `svg.rect`, `svg.circle`, etc., to generate any SVG tag.
 
 ## Code
 
