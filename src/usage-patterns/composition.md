@@ -25,6 +25,7 @@ In the example below, we are creating the Victor logo.
 
 :::code source="/examples/logo/logo.rb" :::
 
+[!button :icon-mark-github: See this example on GitHub](https://github.com/DannyBen/victor-book/tree/master/src/examples/logo)
 
 ## See Also
 

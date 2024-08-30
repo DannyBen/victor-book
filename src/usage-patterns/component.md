@@ -46,6 +46,8 @@ In the example below, we are creating this output, using `Cell`, `Piece` and
 :::code source="/examples/checkers/board.rb" :::
 +++
 
+[!button :icon-mark-github: See this example on GitHub](https://github.com/DannyBen/victor-book/tree/master/src/examples/checkers)
+
 ## See Also
 
 {.list-icon}

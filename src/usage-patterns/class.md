@@ -27,6 +27,8 @@ This class generates output identical to the
 
 :::code source="/examples/grid/grid.rb" :::
 
+[!button :icon-mark-github: See this example on GitHub](https://github.com/DannyBen/victor-book/tree/master/src/examples/grid)
+
 ## See Also
 
 {.list-icon}

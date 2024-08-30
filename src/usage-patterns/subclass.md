@@ -37,6 +37,8 @@ to create SVG tags.
 
 :::code source="/examples/grid-subclass/grid.rb" :::
 
+[!button :icon-mark-github: See this example on GitHub](https://github.com/DannyBen/victor-book/tree/master/src/examples/grid)
+
 ## See Also
 
 {.list-icon}

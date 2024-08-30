@@ -27,6 +27,8 @@ In the example below, we are creating this gear icon.
 :::code source="/examples/gear/gear.rb" :::
 +++
 
+[!button :icon-mark-github: See this example on GitHub](https://github.com/DannyBen/victor-book/tree/master/src/examples/gear)
+
 ## See Also
 
 {.list-icon}

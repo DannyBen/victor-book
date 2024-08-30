@@ -26,6 +26,8 @@ In the example below, we are creating this ghost image.
 
 :::code source="/examples/ghost/ghost.rb" :::
 
+[!button :icon-mark-github: See this example on GitHub](https://github.com/DannyBen/victor-book/tree/master/src/examples/ghost)
+
 ## See Also
 
 {.list-icon}
