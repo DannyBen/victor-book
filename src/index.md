@@ -17,7 +17,7 @@ Building a Meter Bar with Victor.
 ![](/examples/meter/meter.svg)
 +++ :icon-ruby: Ruby Input
 :::code source="/examples/meter/meter.rb" :::
-+++ :icon-code: SVG Code
++++ :icon-code: SVG Output
 :::code source="/examples/meter/meter.svg" :::
 +++
 
