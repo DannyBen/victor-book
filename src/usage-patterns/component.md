@@ -18,7 +18,7 @@ In the example below, we are creating this output, using `Cell`, `Piece` and
 ## Usage Pattern
 
 1. Create a class that inherits from `Victor::Component`
-2. Implement `#width` and `#height`, wither as public methods or instance variables.
+2. Implement `#width` and `#height`, either as public methods or instance variables.
 3. Implement `#body`, and use it to add SVG elements and/or embed other components.
 4. Optionally, implement `#style`, and use it to return a CSS hash, which will be 
    merged to any hosting component.
