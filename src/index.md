@@ -2,6 +2,8 @@
 label: Overview
 icon: home
 order: 100
+meta:
+  title: Victor - Ruby SVG Image Builder
 ---
 
 # Introduction to Victor
